@@ -1,0 +1,2 @@
+# competitivecoding
+basic competitive coding 
