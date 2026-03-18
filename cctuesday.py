@@ -77,3 +77,47 @@ list3=[8,9,4]
 for i in list1:
     if i in list2 and i in list3:
         print(i)
+
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'timeConversion' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts STRING s as parameter.
+#
+
+def timeConversion(s):
+    period= s[-2]
+    time_part = s[:2]
+    hours,minutes,seconds= time_part.split(':')
+    hours = int(hours)
+    if period == "AM":
+        if hours ==12:
+            hours = 0
+    else :
+        if hours !=12:
+            hours += 12
+    return f"{hours:02d}:{minutes}:{seconds}"
+    
+        
+    # Write your code here
+    
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = timeConversion(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+
